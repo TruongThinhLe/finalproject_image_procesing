@@ -4,7 +4,7 @@ class Algorithms_Math:
     def __init__(self):
         pass
     def BAOAlgorithms(self):
-    
+        pass
     @staticmethod
     def CreNewMatrixLike (array, value = 1, index = 2, border = False, left = 0, right = 0, top = 0, bottom = 0, typedata = "tup"):
         '''
@@ -31,35 +31,25 @@ class Algorithms_Math:
         Kiểu dữ liệu đầu ra:
                 tuple hoặc numpy.array
         '''
-        #Lấy số hàng cột và kênh màu (nếu có)
         w = h = c = 0;
-        #Khởi tạo kết quả
         ketqua = None;
         if index == 3:
-            #Đặt giá trị lại cho biết ketqua.
             ketqua = tuple(tuple(tuple()));
             h, w , c = array.shape
         else:
-            #Đặt giá trị lại cho biết ketqua.
             ketqua = tuple(tuple());
             h, w = array.shape
-        #Nếu value = -1 thì đó là lấy toàn bộ giá trị của array copy ra:
         if value is (-1):
-            #Nếu không còn kênh nào khác.
             if c == 0:
                 for he in range(0, h):
                     ketqua = (array[he, :], )
-            #Ngược lại
             else:
                 for he in range(0, h):
                     ketqua = (array[he, :, :], )
-        #Khi value là một giá trị khác -1
         else:
-            #Nếu không còn kênh nào khác.
             if c == 0:
                 for he in range(0, h):
                     ketqua = ( [value for i in range(0, array.shape[1])], )
-            #Ngược lại
             else:
                 for he in range(0, h):
                     ketqua = ([[value for i in range(0, array.shape[1])] for j in range(0, array.shape[2])] , )
