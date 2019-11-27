@@ -5,9 +5,10 @@ class Algorithms_Math:
         pass
     def BAOAlgorithms(self):
         pass
-    def CreaArr(array, value = 1, index = 2, border = False, left = 0, right = 0, top = 0, bottom = 0, typedata = "tup"):
+    def CreaArr(self, array, value = 1, index = 2, border = False, left = 0, right = 0, top = 0, bottom = 0, typedata = "tup"):
         return Algorithms_Math.CreNewMatrixLike(array, value, index, border, left, right, top, bottom, typedata);
-    
+    def Convolution (self, image, kernel):
+        
     @staticmethod
     def CreNewMatrixLike (array, value = 1, index = 2, border = False, left = 0, right = 0, top = 0, bottom = 0, typedata = "tup"):
         w = h = c = 0;
@@ -41,3 +42,39 @@ class Algorithms_Math:
                 return ketqua;
         return ketqua if typedata is "tup" else np.array(ketqua)
 
+    
+    @staticmethod
+    def tensordot(arr, kernel, type = "binary", mode = "sum"):
+        try:
+            arr_copy = Algorithms_Math.CreNewMatrixLike(arr, -1, typedata = "arr")
+        except:
+            pass
+        if mode in {"sum", "average"}:
+            sum = 0
+            if type is "binary":
+                for i in range(0, arr.shape[0]):
+                    for j in range(0, arr.shape[1]):
+                        sum += arr_copy[i, j] * kernel[i, j]
+                return sum;
+            elif type in {"color2D" , "gray"}:
+                for i in range(0, arr.shape[0]):
+                    for j in range(0, arr.shape[1]):
+                        sum += arr_copy[i, j] * kernel[i, j]
+                return sum / (arr_copy.shape[0] * arr_copy.shape[1])
+            elif type is "color3D"
+                try:
+                    sum = 0
+                    arr_copy = Algorithms_Math.CreNewMatrixLike(arr, -1, index = 3, typedata = "arr")
+                    result = list()
+                    for c in range(0, 3):
+                        for i in range(0, arr.shape[0]):
+                            for j in range(0, arr.shape[1]):
+                                sum += arr_copy[i, j] * kernel[i, j]
+                        result.append(sum / (arr_copy.shape[0] * arr_copy.shape[1]))
+                    return result;
+                except:
+                    return None
+        elif mode is "delation":
+            pass
+        elif mode is "colation":
+            pass
