@@ -5,6 +5,9 @@ class Algorithms_Math:
         pass
     def BAOAlgorithms(self):
         pass
+    def CreaArr(array, value = 1, index = 2, border = False, left = 0, right = 0, top = 0, bottom = 0, typedata = "tup"):
+        return Algorithms_Math.CreNewMatrixLike(array, value, index, border, left, right, top, bottom, typedata);
+    
     @staticmethod
     def CreNewMatrixLike (array, value = 1, index = 2, border = False, left = 0, right = 0, top = 0, bottom = 0, typedata = "tup"):
         w = h = c = 0;
@@ -37,5 +40,4 @@ class Algorithms_Math:
                 ketqua = cv2.copyMakeBorder(array, left, right, top, bottom, cv2.BORDER_CONSTANT, value = value);
                 return ketqua;
         return ketqua if typedata is "tup" else np.array(ketqua)
-
 
