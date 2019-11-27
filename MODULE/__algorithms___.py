@@ -7,30 +7,6 @@ class Algorithms_Math:
         pass
     @staticmethod
     def CreNewMatrixLike (array, value = 1, index = 2, border = False, left = 0, right = 0, top = 0, bottom = 0, typedata = "tup"):
-        '''
-        Hàm CreNewMatrixLike là hàm tạo một ma trận mới phụ thuộc và mảng array.
-        Cấu trúc:
-            CreNewMatrixLike([array] , [value] = 1, [index] = 2, [border] = False, [left] = 0, [right] = 0, [top] = 0, [bottom] = 0, [typedata] = "tup")
-            Với:
-                [array]    : là một ma trận có tối thiểu 2 chiều.
-                [value]    : là giá trị của mảng array. Mặc định là 1; -1 là tạo ma trận có giá trị giống ma trận gốc. 
-                [border]   : Mặc định là False - Không tạo viền; Khi có giá trị là True - Tạo viền với các thông số sau:
-                [left]     : Độ rộng bên trái. Mặc định là 0;
-                [right]    : Độ rộng bên phải. Mặc định là 0;
-                [top]      : Độ rộng phía trên. Mặc định là 0;
-                [bottom]   : Độ rộng phía dưới. Mặc định là 0;
-                [typedata] : Chọn kiểu dữ liệu trả ra. "tup" là tuple, "arr" là numpy.array()
-        Kiểu dữ liệu đầu vào:
-                [array]    : numpy.array() thuộc thư viện numpy
-                [value]    : int
-                [border]   : bool
-                [left]     : int
-                [right]    : int
-                [top]      : int
-                [bottom]   : int
-        Kiểu dữ liệu đầu ra:
-                tuple hoặc numpy.array
-        '''
         w = h = c = 0;
         ketqua = None;
         if index == 3:
